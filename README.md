@@ -1,6 +1,6 @@
 # Example. React (Next.js) RSS-client
 
-This repository contains a detailed sample app using:
+Libraries:
 
  - React (Next.js)
  - Redux
