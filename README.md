@@ -1,4 +1,4 @@
-# Sample App. React (Next.js)
+# Example. React (Next.js) RSS-client
 
 This repository contains a detailed sample app using:
 
@@ -6,4 +6,4 @@ This repository contains a detailed sample app using:
  - Redux
  - Material-ui
 
-<img src="https://raw.githubusercontent.com/limnid/react-sample/master/misc/screen.png" width="480">
+<img src="https://raw.githubusercontent.com/limnid/react-sample/main/misc/screen.png" width="480">

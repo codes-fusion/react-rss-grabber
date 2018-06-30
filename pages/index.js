@@ -5,6 +5,7 @@ import List from '../components/List';
 import Theme from '../components/Theme';
 import AppBar from '../components/AppBar';
 import Menu from '../components/Menu';
+import Error from './_error';
 
 import css from '../styles/css';
 import { reduxOf, dispatchList, dispatchTitle } from '../store';
@@ -26,6 +27,7 @@ class Index extends React.Component {
 
     static async getInitialProps({ store, isServer, pathname, query }) {
         const items = [];
+        const statusCode = false;
         const res = await fetch(`https://hh.ru/search/vacancy?text=&area=1`);
         const text = await res.text();
         const $ = Cheerio.load(text);
@@ -44,10 +46,14 @@ class Index extends React.Component {
         store.dispatch(dispatchTitle(title.text()));
         store.dispatch(dispatchList(items));
 
-        return isServer;
+        return { isServer, statusCode };
     }
 
     render() {
+        if (this.props.statusCode) {
+            return <Error statusCode={this.props.statusCode} />
+        }
+
         return (
             <Theme>
                 <div>
